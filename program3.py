@@ -29,6 +29,7 @@ def main():
         totalHours = week1 + week2 + week3 + week4
         regularHourRate = hourlyRate * REGULAR_HOURS
         averageHours = totalHours / NUM_WEEKS #Assuming all months have 4 weeks
+        overtimeHours = totalHours - REGULAR_HOURS
         hoursWorked = totalHours - overtimeHours
         regularHourRate = hourlyRate * hoursWorked
 
@@ -39,7 +40,6 @@ def main():
         #Invoice Processing
         if totalHours > REGULAR_HOURS:
             overtimeRate = OT_RATE * hourlyRate
-            overtimeHours = totalHours - REGULAR_HOURS
             overtimeHourRate = round(overtimeRate,2)
             overtimeHourAmount = round(overtimeHourRate * overtimeHours,2)
             overtimeTotal = round(overtimeHours * overtimeHourRate,2)
